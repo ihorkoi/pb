@@ -19,16 +19,19 @@ def word_guesser(selected_word, tries):
         except:
             print('Enter a valid letter!')
             continue
-
         word = ''.join(letter if letter == selected_word[i] else word[i]
                        for i in range(len(selected_word)))
 
         print(word)
-        print(f'You have {tries - guesses-1} tries left!')
-        guesses += 1
         if word == selected_word:
             print('Winner!')
             return
+
+        guesses += 1
+
+        print(f'You have {tries - guesses-1} tries left!')
+
+    print(f'The world was {selected_word}! Try your luck again')
     return
 
 
